@@ -67,13 +67,7 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  for(let i = 0; i <= array.length; i++) {
-    if(array[i] === elemento) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  return array.includes(elemento);
 }
 
 
@@ -81,11 +75,7 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  var suma = 0;
-  for(let i = 0; i < numeros.length; i++) {
-    suma = suma + numeros[i];
-  }
-  return suma;
+  return numeros.reduce((acc, num) => acc + num);
 }
 
 
@@ -93,12 +83,8 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  var suma = 0;
-  for(let i = 0; i < resultadosTest.length; i++) {
-    suma = suma + resultadosTest[i];
-  }
+  const suma = resultadosTest.reduce((acc, num) => acc + num);
   return suma/resultadosTest.length
-  
 }
 
 
@@ -157,12 +143,7 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-
-  if(String(n).charAt(0) === "9") {
-    return true
-  } else {
-    return false
-  }
+  return n.toString().charAt(0) === "9";
 }
 
 
@@ -185,12 +166,8 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  nuevoArray = [];
-  for(let i = 0; i < array.length; i++) {
-    if(array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre") {
-      nuevoArray.push(array[i])
-    }
-  }
+  nuevoArray = array.filter(month => month === "Enero" || month === "Marzo" || month === "Noviembre");
+
   if(nuevoArray.length < 3) {
     return "No se encontraron los meses pedidos";
   } else {
@@ -203,13 +180,7 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-  nuevoArray = [];
-  for(let i = 0; i < array.length; i++) {
-    if(array[i] > 100) {
-      nuevoArray.push(array[i]);
-    }
-  }
-  return nuevoArray;
+  return array.filter(num => num > 100);
 }
 
 

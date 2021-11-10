@@ -9,9 +9,7 @@ function crearGato(nombre, edad) {
   var gato = {
     nombre: nombre,
     edad: edad,
-    meow: function () {
-      return "Meow!";
-    }
+    meow: () => "Meow!"
   }
   return gato;
 }
@@ -67,11 +65,7 @@ function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  if(usuario.email) {
-    return true;
-  } else {
-    return false;
-  }
+  return !!usuario.email;
 }
 
 
@@ -81,11 +75,7 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(objeto[propiedad]) {
-    return true;
-  } else {
-    return false;
-  }
+  return !!objeto[propiedad]
 }
 
 function verificarPassword(usuario, password) {
@@ -93,11 +83,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-  if(password === usuario.password) {
-    return true
-  } else {
-    return false
-  }
+  return password === usuario.password
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
