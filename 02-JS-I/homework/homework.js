@@ -210,7 +210,7 @@ function esVocal(letra){
 
 
 
-// No modificar nada debajo de esta líne
+// No modificar nada debajo de esta línea
 // --------------------------------
 
 module.exports = {
