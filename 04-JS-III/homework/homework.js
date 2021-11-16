@@ -26,10 +26,7 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  for(let i = 0; i < array.length; i++) {
-    array[i] = array[i] + 1;
-  }
-  return array
+  return array.map(elem => elem + 1);
 }
 
 
@@ -104,7 +101,7 @@ function multiplicarArgumentos() {
     return 0;
   }
 
-  total = 1;
+  let total = 1;
 
   for(let i = 0; i < arguments.length; i++) {
      total = arguments[i] * total;
@@ -116,13 +113,7 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo) {
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-  total = 0;
-  for(let i = 0; i < arreglo.length; i++) {
-    if(arreglo[i] > 18) {
-      total++;
-    }
-  }
-  return total;
+  return arreglo.filter(value => value > 18).length;
 }
 
 
@@ -131,13 +122,8 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  if(numeroDeDia === 7 || numeroDeDia === 1) {
-    return "Es fin de semana";
-  } else {
-    return "Es dia Laboral";
-  }
-} 
-
+  return numeroDeDia === 7 || numeroDeDia === 1 ? "Es fin de semana" : "Es dia Laboral";
+}
 
 function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
@@ -166,7 +152,7 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  nuevoArray = array.filter(month => month === "Enero" || month === "Marzo" || month === "Noviembre");
+  const nuevoArray = array.filter(month => month === "Enero" || month === "Marzo" || month === "Noviembre");
 
   if(nuevoArray.length < 3) {
     return "No se encontraron los meses pedidos";
